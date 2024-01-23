@@ -1,14 +1,14 @@
 [
     {
         "number": 1,
-        "sentence": "Số 1 là số tự nhiên nhỏ nhất."
+        "answer": "Số 1 là số tự nhiên nhỏ nhất."
     },
     {
         "number": 2,
-        "sentence": "Số 2 là số tự nhiên tiếp theo sau số 1."
+        "answer": "Số 2 là số tự nhiên tiếp theo sau số 1."
     },
     {
         "number": 3,
-        "sentence": "Số 3 là số tự nhiên tiếp theo sau số 2."
+        "answer": "Số 3 là số tự nhiên tiếp theo sau số 2."
     }
 ]

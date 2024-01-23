@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng Lấy Dữ Liệu</title>
+</head>
+<body>
+    <h1>Ứng dụng Lấy Dữ Liệu</h1>
+    
+    <form method="POST" action="/">
+        <label for="input_data">Nhập số hoặc câu hỏi:</label>
+        <input type="text" name="input_data" id="input_data" required>
+        <button type="submit">Tìm kiếm</button>
+    </form>
+
+    <div id="ket_qua">
+        <!-- Kết quả sẽ được hiển thị ở đây -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            const ketQuaDiv = document.getElementById('ket_qua');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const formData = new FormData(form);
+
+                fetch('/', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    ketQuaDiv.innerHTML = `<p><strong>Câu hỏi:</strong> ${data.cau_hoi}</p>
+                                          <p><strong>Đáp án:</strong> ${data.dap_an}</p>`;
+                })
+                .catch(error => console.error('Lỗi:', error));
+            });
+        });
+    </script>
+</body>
+</html>
